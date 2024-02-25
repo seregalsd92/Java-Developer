@@ -11,8 +11,16 @@ public class Arithmetic {
         return x + y;
     }
 
-    public int product() {
+    public int multiplication() {
         return x * y;
+    }
+
+    public int max () {
+        return x > y ? x : y;
+    }
+
+    public int min () {
+        return x < y ? x : y;
     }
 
 }
