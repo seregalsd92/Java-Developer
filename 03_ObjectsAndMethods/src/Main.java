@@ -11,5 +11,12 @@ public class Main {
         System.out.println("Итоговый вес: " + basket.getTotalWeight());
         basket.clear();
         basket.print("После очистки");
+
+        System.out.println("\n______________");
+        Basket basket1 = new Basket("Товары",500);
+        basket1.print("Содержимое корзины 1");
+        System.out.println("Итоговая цена: " + basket1.getTotalPrice());
+        System.out.println("Итоговый вес: " + basket1.getTotalWeight());
+        System.out.println("Лимит корзины: " + basket1.getLimit());
     }
 }

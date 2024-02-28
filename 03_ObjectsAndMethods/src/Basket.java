@@ -79,6 +79,10 @@ public class Basket {
         return items.contains(name);
     }
 
+    public int getLimit() {
+        return limit;
+    }
+
     public void print(String title) {
         System.out.println(title);
         if (items.isEmpty()) {
