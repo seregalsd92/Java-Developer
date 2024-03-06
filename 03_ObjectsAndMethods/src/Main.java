@@ -9,8 +9,8 @@ public class Main {
         basket.print("Содержимое корзины");
         System.out.println("Итоговая цена: " + basket.getTotalPrice());
         System.out.println("Итоговый вес: " + basket.getTotalWeight());
-        basket.clear();
-        basket.print("После очистки");
+//        basket.clear();
+//        basket.print("После очистки");
 
         System.out.println("\n______________");
         Basket basket1 = new Basket("Товары",500);
@@ -18,5 +18,8 @@ public class Main {
         System.out.println("Итоговая цена: " + basket1.getTotalPrice());
         System.out.println("Итоговый вес: " + basket1.getTotalWeight());
         System.out.println("Лимит корзины: " + basket1.getLimit());
+
+        System.out.println("Средняя цена товара: " + Basket.averageProductPrice());
+        System.out.println("Средняя стоимость корзины: " + Basket.averageBasketPrice());
     }
 }
