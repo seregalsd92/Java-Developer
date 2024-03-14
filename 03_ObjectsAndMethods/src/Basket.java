@@ -58,14 +58,10 @@ public class Basket {
     }
 
     public void add(String name, int price) {
-        add(name, price, 1, 0);
+        add(name, price, 1);
     }
 
     public void add(String name, int price, int count) {
-        add (name,price,count,0);
-    }
-
-    public void add(String name, int price, int count, double weight) {
         boolean error = false;
         if (contains(name)) {
             error = true;
@@ -81,12 +77,16 @@ public class Basket {
         }
 
         items = items + "\n" + name + " - " +
-                count + " шт. - " + price +
-                "; вес товара - " + weight + " кг.";
+                count + " шт. - " + price;
         totalPrice = totalPrice + count * price;
-        totalWeight = totalWeight + count * weight;
         increaseTotalProductsPrice(count * price);
         increaseTotalProductsCount(count);
+    }
+
+    public void add(String name, int price, int count, double weight) {
+        add(name,price,count);
+        items += "; вес товара - " + weight + " кг.";
+        totalWeight = totalWeight + count * weight;
     }
 
     public void clear() {
