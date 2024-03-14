@@ -62,7 +62,6 @@ public class Basket {
     }
 
     public void add(String name, int price, int count) {
-//        add (name,price,count,0);
         boolean error = false;
         if (contains(name)) {
             error = true;
@@ -78,8 +77,7 @@ public class Basket {
         }
 
         items = items + "\n" + name + " - " +
-                count + " шт. - " + price;/* +
-                "; вес товара - " + weight + " кг.";*/
+                count + " шт. - " + price;
         totalPrice = totalPrice + count * price;
         increaseTotalProductsPrice(count * price);
         increaseTotalProductsCount(count);

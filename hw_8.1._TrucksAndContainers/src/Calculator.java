@@ -6,6 +6,7 @@ public class Calculator {
     private int containerCount = 0;
     private int truckCount = 0;
     private String result = "";
+
     public Calculator(int boxCount) {
         this.boxCount = boxCount;
     }
@@ -18,7 +19,11 @@ public class Calculator {
         return truckCount;
     }
 
-    public String calculate() {
+    public String getResult() {
+        return result;
+    }
+
+    public void calculate() {
         if (boxCount > 0) {
             for (int i = 1; i <= boxCount; i++) {
                 if (i % MAX_BOX_IN_TRUCK == 1) {
@@ -32,22 +37,24 @@ public class Calculator {
         } else {
             result = "Введено не верное количество ящиков";
         }
-        return result;
     }
 
     public void addTruck () {
-//        truckCount++;
-        result += "\nГрузовик: " + ++truckCount;
-//       return result;
+        result += System.lineSeparator() + "Грузовик: " + ++truckCount;
     }
 
     public void addContainer() {
-//        containerCount++;
-        result += "\n\tКонтейнер: " + ++containerCount;
-//        return result;
+        result += System.lineSeparator() + "\tКонтейнер: " + ++containerCount;
     }
 
     public void addBox(int boxNumber) {
-        result += "\n\t\tЯщик: " + boxNumber;
+        result += System.lineSeparator() + "\t\tЯщик: " + boxNumber;
+    }
+
+    public void printResult() {
+        System.out.println(result);
+        System.out.println(System.lineSeparator() + "Необходимо:" + System.lineSeparator());
+        System.out.println("грузовиков - " + getTruckCount() + " шт.");
+        System.out.println("контейнеров - " + getContainerCount() + " шт.");
     }
 }
