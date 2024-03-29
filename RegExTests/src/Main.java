@@ -49,6 +49,7 @@ public class Main {
             System.out.println(citation);
         }
 
+        System.out.println("Тест find");
         String text = "A23E-8M28-76AF-2L65-24A3";
         String regex = "[A-F0-9]{4}";
         Pattern pattern = Pattern.compile(regex);
