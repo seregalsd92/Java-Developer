@@ -16,8 +16,9 @@ public class Main {
                 position = Integer.parseInt(arguments[1]);
                 i = 2;
             }
-            for (; i < arguments.length; i++) {
+            while (i < arguments.length) {
                 task = task.concat(arguments[i]).concat(" ");
+                i++;
             }
             task = task.trim();
             switch (arguments[0]) {
