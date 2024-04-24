@@ -68,7 +68,6 @@ public class PhoneBook {
             if (i != phones.size() - 1) {
                 result.append(", ");
             }
-
         }
         return result.toString();
     }
