@@ -21,5 +21,14 @@ public class Main {
 
         System.out.println("Средняя цена товара: " + Basket.averageProductPrice());
         System.out.println("Средняя стоимость корзины: " + Basket.averageBasketPrice());
+
+        System.out.println("\n______________");
+        Basket basket2 = new Basket(1000);
+        basket2.add("Игрушка1", 500,1, 1.5);
+        basket2.add("Игрушка2",300,2,0.6);
+        basket2.print("Корзина 2");
+        System.out.println("Итоговая цена: " + basket2.getTotalPrice());
+        System.out.println("Итоговый вес: " + basket2.getTotalWeight());
+        System.out.println("Лимит корзины: " + basket2.getLimit());
     }
 }

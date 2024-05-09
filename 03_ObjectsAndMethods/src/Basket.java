@@ -10,7 +10,7 @@ public class Basket {
 
     public Basket() {
         increaseCount(1);
-        items = "Список товаров:";
+//        items = "Список товаров:";
         this.limit = 1000000;
     }
 
@@ -61,7 +61,7 @@ public class Basket {
         add(name, price, 1);
     }
 
-    public void add(String name, int price, int count) {
+    public boolean add(String name, int price, int count) {
         boolean error = false;
         if (contains(name)) {
             error = true;
@@ -73,7 +73,7 @@ public class Basket {
 
         if (error) {
             System.out.println("Error occured :(");
-            return;
+            return error;
         }
 
         items = items + "\n" + name + " - " +
@@ -81,12 +81,14 @@ public class Basket {
         totalPrice = totalPrice + count * price;
         increaseTotalProductsPrice(count * price);
         increaseTotalProductsCount(count);
+        return error;
     }
 
     public void add(String name, int price, int count, double weight) {
-        add(name,price,count);
-        items += "; вес товара - " + weight + " кг.";
-        totalWeight = totalWeight + count * weight;
+        if (!add(name,price,count)) {
+            items += "; вес товара - " + weight + " кг.";
+            totalWeight = totalWeight + count * weight;
+        }
     }
 
     public void clear() {
@@ -116,6 +118,7 @@ public class Basket {
         if (items.isEmpty()) {
             System.out.println("Корзина пуста");
         } else {
+            System.out.print("Список товаров:");
             System.out.println(items);
         }
     }
